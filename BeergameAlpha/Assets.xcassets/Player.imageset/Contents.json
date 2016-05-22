@@ -1,16 +1,16 @@
 {
   "images" : [
     {
-      "idiom" : "universal",
-      "filename" : "guardian2.png",
+      "idiom" : "iphone",
+      "filename" : "black-and-white-1299789_640 12-41-58-413.png",
       "scale" : "1x"
     },
     {
-      "idiom" : "universal",
+      "idiom" : "iphone",
       "scale" : "2x"
     },
     {
-      "idiom" : "universal",
+      "idiom" : "iphone",
       "scale" : "3x"
     }
   ],
