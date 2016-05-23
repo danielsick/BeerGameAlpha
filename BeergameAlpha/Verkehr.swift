@@ -30,7 +30,7 @@ class Verkehr{
     
     func setRandomFrame(){
         
-        let range = UInt32(350)..<UInt32(380)
+        let range = UInt32(300)..<UInt32(310)
         self.randomFrame = Int(range.startIndex+arc4random_uniform(range.endIndex - range.startIndex+1))
         
     }
