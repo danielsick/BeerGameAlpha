@@ -17,6 +17,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var endOfScreenTop = CGFloat()
     var endOfScreenBottom = CGFloat()
     
+    
+    
     enum ColliderType:UInt32{
         case player = 1
         case Verkehr = 2
@@ -27,9 +29,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
      
     endOfScreenBottom = (self.size.height) * CGFloat(-1)
     endOfScreenTop = (self.size.height)
-        
     
-    addPlayer()    
+
+    
+    addPlayer()
     addPkws()
     addBG()
     
@@ -122,7 +125,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 if !pkw.moving{
                     pkw.currentFrame += 1
                    
-                    if pkw.currentFrame > pkw.randomFrame{
+                    if pkw.currentFrame >= 85
+                    {
                         pkw.moving = true
                         addPkws()
                         print("zuende")
