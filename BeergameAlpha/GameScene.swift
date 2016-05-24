@@ -31,10 +31,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     endOfScreenTop = (self.size.height)
     
 
-    
+    addBG()
     addPlayer()
     addPkws()
-    addBG()
+    
     
        
     }
@@ -82,7 +82,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         player.physicsBody!.categoryBitMask = ColliderType.player.rawValue
         player.physicsBody!.contactTestBitMask = ColliderType.Verkehr.rawValue
         player.physicsBody!.collisionBitMask = ColliderType.Verkehr.rawValue
-        player.position = CGPoint(x: size.width/6,y:size.height/2)
+        player.position = CGPoint(x: size.width/6, y:size.height/2)
         car = Car(car: player)
         addChild(player)
     
