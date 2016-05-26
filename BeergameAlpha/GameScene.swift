@@ -52,11 +52,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     func addPkw(named: String, speed: Float,xPos: CGFloat){
         let pkwNode = SKSpriteNode(imageNamed: "Auto")
         
+        
         pkwNode.physicsBody = SKPhysicsBody(circleOfRadius: pkwNode.size.height/2)
         pkwNode.physicsBody!.affectedByGravity = false
         pkwNode.physicsBody!.categoryBitMask = ColliderType.Verkehr.rawValue
         pkwNode.physicsBody!.contactTestBitMask = ColliderType.player.rawValue
         pkwNode.physicsBody!.collisionBitMask = ColliderType.player.rawValue
+        pkwNode.zPosition = 2
         
         let pkw = Verkehr(speed: speed, pkw: pkwNode)
         pkwArray.append(pkw)
@@ -80,7 +82,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         player.physicsBody!.contactTestBitMask = ColliderType.Verkehr.rawValue
         player.physicsBody!.collisionBitMask = ColliderType.Verkehr.rawValue
         player.position = CGPoint(x: size.width/6, y:size.height/2)
-        
+        player.zPosition = 1
     
         car = Car(car: player)
         addChild(player)
@@ -89,10 +91,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     
     func addBG() {
-     
-        let backgroundImage = UIImageView(frame: UIScreen.mainScreen().bounds)
-        backgroundImage.image = UIImage(named: "Kreuzung")
-        self.view!.insertSubview(backgroundImage, atIndex: 1)
+        let bg = SKSpriteNode(imageNamed: "Kreuzung")
+        bg.size = self.frame.size
+        bg.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame))
+        bg.zPosition = 0
+        addChild(bg)
        
     }
     
