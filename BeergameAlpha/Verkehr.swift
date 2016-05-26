@@ -14,7 +14,7 @@ class Verkehr{
     var pkw:SKSpriteNode
     var speed: Float = 0.0
     var currentFrame = 0
-    var randomFrame = 0
+    var randomFrame = 320
     var moving = false
     var angle = 0.0
     var range = 2.0
@@ -23,14 +23,14 @@ class Verkehr{
     init(speed:Float, pkw:SKSpriteNode){
         self.speed = speed
         self.pkw = pkw
-        self.setRandomFrame()
+       // self.setRandomFrame()
     
         
     }
-    
+ 
     func setRandomFrame(){
         
-        let range = UInt32(350)..<UInt32(380)
+        let range = UInt32(300)..<UInt32(310)
         self.randomFrame = Int(range.startIndex+arc4random_uniform(range.endIndex - range.startIndex+1))
         
     }
