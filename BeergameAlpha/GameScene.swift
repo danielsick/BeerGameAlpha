@@ -30,13 +30,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     endOfScreenBottom = (self.size.height) * CGFloat(-1)
     endOfScreenTop = (self.size.height)
     
-
-    addBG()
-    addPlayer()
-    addPkws()
+     
+        addPlayer()
+        addPkws()
+      addBG()
     
-    
-       
     }
     
     
@@ -46,7 +44,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func addPkws(){
-        
         
         let randomX = CGFloat(Float(arc4random()) / 0xFFFFFFFF) * (2.1 - 1.9) + 1.9
         addPkw("hol den", speed: 4.0, xPos: CGFloat(self.size.width/randomX))
@@ -83,6 +80,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         player.physicsBody!.contactTestBitMask = ColliderType.Verkehr.rawValue
         player.physicsBody!.collisionBitMask = ColliderType.Verkehr.rawValue
         player.position = CGPoint(x: size.width/6, y:size.height/2)
+        
+    
         car = Car(car: player)
         addChild(player)
     
@@ -90,9 +89,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     
     func addBG() {
-        let bg = SKSpriteNode(imageNamed: "Kreuzung")
-        bg.position = CGPoint(x:size.width/2,y:size.height/2)
-        addChild(bg)
+     
+        let backgroundImage = UIImageView(frame: UIScreen.mainScreen().bounds)
+        backgroundImage.image = UIImage(named: "Kreuzung")
+        self.view!.insertSubview(backgroundImage, atIndex: 1)
+       
     }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
@@ -125,7 +126,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 if !pkw.moving{
                     pkw.currentFrame += 1
                    
-                    if pkw.currentFrame >= 85
+                    if pkw.currentFrame >= 100
                     {
                         pkw.moving = true
                         addPkws()
