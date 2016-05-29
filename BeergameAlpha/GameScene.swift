@@ -17,8 +17,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var endOfScreenTop = CGFloat()
     var endOfScreenBottom = CGFloat()
     
-    
-    
     enum ColliderType:UInt32{
         case player = 1
         case Verkehr = 2
@@ -30,11 +28,36 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     endOfScreenBottom = (self.size.height) * CGFloat(-1)
     endOfScreenTop = (self.size.height)
     
-     
         addPlayer()
-        addPkws()
-      addBG()
-    
+        addPkwsErsteKreuzung()
+        addBG()
+        
+        let wait = SKAction.waitForDuration(1.5)
+        let run = SKAction.runBlock {
+            
+          
+            self.addPkwsErsteKreuzung()
+            
+        }
+    self.runAction(SKAction.repeatActionForever(SKAction.sequence([wait, run])))
+        
+        let wait2 = SKAction.waitForDuration(1.7)
+        let run2 = SKAction.runBlock {
+            
+            
+            self.addPkwsZweiteKreuzung()
+           
+            
+        }
+        self.runAction(SKAction.repeatActionForever(SKAction.sequence([wait2, run2])))
+        
+        let wait3 = SKAction.waitForDuration(2.0)
+        let run3 = SKAction.runBlock {
+            
+            self.addPkwsDritteKreuzung()
+            
+        }
+        self.runAction(SKAction.repeatActionForever(SKAction.sequence([wait3, run3])))
     }
     
     
@@ -43,10 +66,26 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         print("Kontakt")
     }
     
-    func addPkws(){
+    func addPkwsDritteKreuzung(){
         
-        let randomX = CGFloat(Float(arc4random()) / 0xFFFFFFFF) * (2.1 - 1.9) + 1.9
-        addPkw("hol den", speed: 4.0, xPos: CGFloat(self.size.width/randomX))
+        let randomX = CGFloat(Float(arc4random()) / 0xFFFFFFFF) * (1.2 - 1.2) + 1.2
+        addPkw("hol den", speed: 6.0, xPos: CGFloat(self.size.width/randomX))
+        
+    }
+
+    
+    func addPkwsZweiteKreuzung(){
+        
+        let randomX = CGFloat(Float(arc4random()) / 0xFFFFFFFF) * (1.8 - 1.7) + 1.7
+        addPkw("zweiterWagen", speed: 5.0, xPos: CGFloat(self.size.width/randomX))
+        
+    }
+
+    
+    func addPkwsErsteKreuzung(){
+        
+        let randomX = CGFloat(Float(arc4random()) / 0xFFFFFFFF) * (3.3 - 2.8) + 2.8
+        addPkw("ersterWagen", speed: 4.0, xPos: CGFloat(self.size.width/randomX))
         
     }
     func addPkw(named: String, speed: Float,xPos: CGFloat){
@@ -117,6 +156,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
    
     override func update(currentTime: CFTimeInterval) {
         /* Called before each frame is rendered */
+        
         if !gameOver {
             
             updateVerkehrsPosition()
@@ -132,7 +172,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                     if pkw.currentFrame >= 100
                     {
                         pkw.moving = true
-                        addPkws()
                         print("zuende")
                     }else{
                         pkw.pkw.position.x = CGFloat(Double(pkw.pkw.position.x))
