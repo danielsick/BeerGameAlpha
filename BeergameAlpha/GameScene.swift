@@ -38,6 +38,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
         addPlayer()
         addPkwsErsteKreuzung()
+        addPkwsZweiteKreuzung()
+        addPkwsDritteKreuzung()
         addBG()
         
         let wait = SKAction.waitForDuration(1.0)
@@ -49,7 +51,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
     self.runAction(SKAction.repeatActionForever(SKAction.sequence([wait, run])))
         
-        let wait2 = SKAction.waitForDuration(1.3)
+        let wait2 = SKAction.waitForDuration(1.1)
         let run2 = SKAction.runBlock {
             
             
@@ -59,7 +61,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
         self.runAction(SKAction.repeatActionForever(SKAction.sequence([wait2, run2])))
         
-        let wait3 = SKAction.waitForDuration(1.5)
+        let wait3 = SKAction.waitForDuration(1.2)
         let run3 = SKAction.runBlock {
             
             self.addPkwsDritteKreuzung()
@@ -78,7 +80,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     func addPkwsDritteKreuzung(){
         
         let randomX = CGFloat(Float(arc4random()) / 0xFFFFFFFF) * (1.2 - 1.2) + 1.2
-        addPkw("dritterWagen", speed: 6.0, xPos: CGFloat(self.size.width/randomX))
+        addPkw("dritterWagen", speed: 7.0, xPos: CGFloat(self.size.width/randomX))
         
     }
 
@@ -86,7 +88,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     func addPkwsZweiteKreuzung(){
         
         let randomX = CGFloat(Float(arc4random()) / 0xFFFFFFFF) * (1.8 - 1.7) + 1.7
-        addPkw("zweiterWagen", speed: 5.0, xPos: CGFloat(self.size.width/randomX))
+        addPkw("zweiterWagen", speed: 6.0, xPos: CGFloat(self.size.width/randomX))
         
     }
 
