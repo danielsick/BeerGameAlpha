@@ -63,13 +63,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     func didBeginContact(contact: SKPhysicsContact) {
         gameOver = true
+        self.view?.presentScene(GameOverScene.init(size: self.view!.frame.size , won: false))
         print("Kontakt")
     }
     
     func addPkwsDritteKreuzung(){
         
         let randomX = CGFloat(Float(arc4random()) / 0xFFFFFFFF) * (1.2 - 1.2) + 1.2
-        addPkw("hol den", speed: 6.0, xPos: CGFloat(self.size.width/randomX))
+        addPkw("dritterWagen", speed: 6.0, xPos: CGFloat(self.size.width/randomX))
         
     }
 

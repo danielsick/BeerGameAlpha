@@ -2,12 +2,11 @@
   "images" : [
     {
       "idiom" : "iphone",
-      "filename" : "images.png",
+      "filename" : "Pickup-GTA2-gang.png",
       "scale" : "1x"
     },
     {
       "idiom" : "iphone",
-      "filename" : "Pickup-GTA2-gang.png",
       "scale" : "2x"
     },
     {
