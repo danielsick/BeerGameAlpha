@@ -16,6 +16,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var pkwArray: [Verkehr] = []
     var endOfScreenTop = CGFloat()
     var endOfScreenBottom = CGFloat()
+    var winPosition = CGFloat()
+    var currentPosition = CGFloat()
+    
+
     
     enum ColliderType:UInt32{
         case player = 1
@@ -25,6 +29,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     override func didMoveToView(view: SKView) {
         self.physicsWorld.contactDelegate = self
      
+        winPosition = CGFloat(self.size.width) - (40)
+    
+
+        
     endOfScreenBottom = (self.size.height) * CGFloat(-1)
     endOfScreenTop = (self.size.height)
     
@@ -32,7 +40,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         addPkwsErsteKreuzung()
         addBG()
         
-        let wait = SKAction.waitForDuration(1.5)
+        let wait = SKAction.waitForDuration(1.0)
         let run = SKAction.runBlock {
             
           
@@ -41,7 +49,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
     self.runAction(SKAction.repeatActionForever(SKAction.sequence([wait, run])))
         
-        let wait2 = SKAction.waitForDuration(1.7)
+        let wait2 = SKAction.waitForDuration(1.3)
         let run2 = SKAction.runBlock {
             
             
@@ -51,7 +59,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
         self.runAction(SKAction.repeatActionForever(SKAction.sequence([wait2, run2])))
         
-        let wait3 = SKAction.waitForDuration(2.0)
+        let wait3 = SKAction.waitForDuration(1.5)
         let run3 = SKAction.runBlock {
             
             self.addPkwsDritteKreuzung()
@@ -121,8 +129,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         player.physicsBody!.categoryBitMask = ColliderType.player.rawValue
         player.physicsBody!.contactTestBitMask = ColliderType.Verkehr.rawValue
         player.physicsBody!.collisionBitMask = ColliderType.Verkehr.rawValue
-        player.position = CGPoint(x: size.width/6, y:size.height/2)
+        player.position = CGPoint(x: size.width/8, y:size.height/2)
         player.zPosition = 1
+        
     
         car = Car(car: player)
         addChild(player)
@@ -158,6 +167,15 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     override func update(currentTime: CFTimeInterval) {
         /* Called before each frame is rendered */
         
+      print (winPosition,  "winPosition")
+        print(currentPosition,"currentposition")
+       
+        
+        
+        if winPosition <= currentPosition
+        {
+            self.view?.presentScene(GameOverScene.init(size: self.view!.frame.size , won: true))
+        }
         if !gameOver {
             
             updateVerkehrsPosition()
@@ -169,7 +187,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             for pkw in pkwArray {
                 if !pkw.moving{
                     pkw.currentFrame += 1
-                   
+                   currentPosition = car.car.position.x
                     if pkw.currentFrame >= 100
                     {
                         pkw.moving = true
