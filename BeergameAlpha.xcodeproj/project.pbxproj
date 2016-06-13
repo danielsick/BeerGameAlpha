@@ -43,11 +43,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		26533F0F1D0E9FF000C9FE38 /* DistributorBeerGame */ = {
+			isa = PBXGroup;
+			children = (
+				C511DEB11CE8E3F50085A93E /* Products */,
+				C511DEB21CE8E3F50085A93E /* BeergameAlpha */,
+			);
+			name = DistributorBeerGame;
+			sourceTree = "<group>";
+		};
 		C511DEA71CE8E3F50085A93E = {
 			isa = PBXGroup;
 			children = (
-				C511DEB21CE8E3F50085A93E /* BeergameAlpha */,
-				C511DEB11CE8E3F50085A93E /* Products */,
+				26533F0F1D0E9FF000C9FE38 /* DistributorBeerGame */,
 			);
 			sourceTree = "<group>";
 		};
