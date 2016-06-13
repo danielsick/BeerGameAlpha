@@ -9,8 +9,8 @@
 /* Begin PBXBuildFile section */
 		5E305ACA1CFC1DE100AD5D7B /* GameOverScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E305AC91CFC1DE100AD5D7B /* GameOverScene.swift */; };
 		C511DEB41CE8E3F50085A93E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C511DEB31CE8E3F50085A93E /* AppDelegate.swift */; };
-		C511DEB81CE8E3F50085A93E /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C511DEB71CE8E3F50085A93E /* GameScene.swift */; };
-		C511DEBA1CE8E3F50085A93E /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C511DEB91CE8E3F50085A93E /* GameViewController.swift */; };
+		C511DEB81CE8E3F50085A93E /* DistributorGameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C511DEB71CE8E3F50085A93E /* DistributorGameScene.swift */; };
+		C511DEBA1CE8E3F50085A93E /* DistributorGameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C511DEB91CE8E3F50085A93E /* DistributorGameVC.swift */; };
 		C511DEBD1CE8E3F50085A93E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C511DEBB1CE8E3F50085A93E /* Main.storyboard */; };
 		C511DEBF1CE8E3F60085A93E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C511DEBE1CE8E3F60085A93E /* Assets.xcassets */; };
 		C511DEC21CE8E3F60085A93E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C511DEC01CE8E3F60085A93E /* LaunchScreen.storyboard */; };
@@ -22,8 +22,8 @@
 		5E305AC91CFC1DE100AD5D7B /* GameOverScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameOverScene.swift; path = ../GameOverScene.swift; sourceTree = "<group>"; };
 		C511DEB01CE8E3F50085A93E /* BeergameAlpha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeergameAlpha.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C511DEB31CE8E3F50085A93E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C511DEB71CE8E3F50085A93E /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
-		C511DEB91CE8E3F50085A93E /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		C511DEB71CE8E3F50085A93E /* DistributorGameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistributorGameScene.swift; sourceTree = "<group>"; };
+		C511DEB91CE8E3F50085A93E /* DistributorGameVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistributorGameVC.swift; sourceTree = "<group>"; };
 		C511DEBC1CE8E3F50085A93E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C511DEBE1CE8E3F60085A93E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C511DEC11CE8E3F60085A93E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -64,8 +64,8 @@
 			children = (
 				5E305AC91CFC1DE100AD5D7B /* GameOverScene.swift */,
 				C511DEB31CE8E3F50085A93E /* AppDelegate.swift */,
-				C511DEB71CE8E3F50085A93E /* GameScene.swift */,
-				C511DEB91CE8E3F50085A93E /* GameViewController.swift */,
+				C511DEB71CE8E3F50085A93E /* DistributorGameScene.swift */,
+				C511DEB91CE8E3F50085A93E /* DistributorGameVC.swift */,
 				C52158851CEF100F00F339C9 /* SupportingFiles */,
 				C511DEBB1CE8E3F50085A93E /* Main.storyboard */,
 				C511DEBE1CE8E3F60085A93E /* Assets.xcassets */,
@@ -157,8 +157,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				C511DECA1CE8F2420085A93E /* Car.swift in Sources */,
-				C511DEB81CE8E3F50085A93E /* GameScene.swift in Sources */,
-				C511DEBA1CE8E3F50085A93E /* GameViewController.swift in Sources */,
+				C511DEB81CE8E3F50085A93E /* DistributorGameScene.swift in Sources */,
+				C511DEBA1CE8E3F50085A93E /* DistributorGameVC.swift in Sources */,
 				C511DECC1CEA38E20085A93E /* Verkehr.swift in Sources */,
 				5E305ACA1CFC1DE100AD5D7B /* GameOverScene.swift in Sources */,
 				C511DEB41CE8E3F50085A93E /* AppDelegate.swift in Sources */,

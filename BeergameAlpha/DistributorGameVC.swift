@@ -15,7 +15,7 @@ class DistributorGameVC: UIViewController {
         super.viewDidLoad()
         super.viewWillLayoutSubviews()
         print(self.view.frame.size)
-         let scene = GameScene(size:view.bounds.size)
+         let scene = DistributorGameVC(size:view.bounds.size)
             // Configure the view.
             let skView = self.view as! SKView
             skView.showsFPS = true
