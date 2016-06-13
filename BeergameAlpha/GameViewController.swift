@@ -1,5 +1,5 @@
 //
-//  GameViewController.swift
+//  DistributorGameVC.swift
 //  BeergameAlpha
 //
 //  Created by mojado on 15.05.16.
@@ -9,7 +9,7 @@
 import UIKit
 import SpriteKit
 
-class GameViewController: UIViewController {
+class DistributorGameVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

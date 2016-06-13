@@ -1,5 +1,5 @@
 //
-//  GameScene.swift
+//  DistributorGameScene.swift
 //  BeergameAlpha
 //
 //  Created by mojado on 15.05.16.
@@ -8,7 +8,7 @@
 
 import SpriteKit
 
-class GameScene: SKScene, SKPhysicsContactDelegate {
+class DistributorGameScene: SKScene, SKPhysicsContactDelegate {
     
     var car: Car!
     var touchLocation = CGFloat()
